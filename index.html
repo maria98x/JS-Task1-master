@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting an Element!</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="container">
+      <li class="box" id="box-1"></li>
+      <li class="box box-to-select" id="box-2"></li>
+      <li class="box box-to-select" id="box-3"></li>
+      <li class="box box-to-select" id="box-4"></li>
+      <li class="box" id="box-5"></li>
+      <li class="box box-to-select-2" id="box-6"></li>
+      <li class="box box-to-select-2" id="box-7"></li>
+      <li class="box box-to-select-2" id="box-8"></li>
+    </ul>
+  </div>
+
+  <script>
+      //Get element by id
+      let box1 = document.getElementById("box-1");
+      box1.addEventListener("click",function(event){
+        event.target.style.background ="white";
+      });
+
+      //Get element by className
+      //Iterate boxes through a For of loop to add functionallity
+      let boxes = document.getElementsByClassName("box-to-select");
+      for (let e of boxes){
+        e.addEventListener("click", function(event){
+          event.target.style.background ="grey";
+
+        });
+      }
+
+      //Get Element with qeurySelector
+      let box5 = document.querySelector("#box-5");
+      box5.addEventListener("click",function(event){
+      event.target.style.background ="black";
+
+      });
+
+      //Get element by querySelectorAll
+      //Iterate boxes through a For of loop to add functionallity
+      let boxes2 = document.querySelectorAll(".box-to-select-2");
+      for (let e of boxes2){
+        e.addEventListener("click",function(event){
+        event.target.style.background="pink";
+
+        });
+      }
+
+  </script>
+</body>
+
+</html>
